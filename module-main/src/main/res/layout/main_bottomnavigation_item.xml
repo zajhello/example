@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    android:clipToPadding="false">
+
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/smallLabel"
+        app:layout_constraintEnd_toEndOf="@+id/smallLabel"
+        app:layout_constraintStart_toStartOf="@+id/smallLabel"
+        tools:src="@drawable/selector_shouye_renwu" />
+
+    <TextView
+        android:id="@+id/smallLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="@dimen/margin5"
+        android:textColor="@color/main_bottom_navigation"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:text="任务" />
+
+    <TextView
+        android:id="@+id/tag"
+        android:layout_width="30dp"
+        android:layout_height="14dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/bg_task_tag"
+        android:gravity="center"
+        android:text="赚钱"
+        android:textColor="#ffffffff"
+        android:textSize="8sp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@+id/icon"
+        app:layout_constraintTop_toTopOf="@+id/icon" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

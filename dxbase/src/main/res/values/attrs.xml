@@ -1,0 +1,12 @@
+<resources>
+
+    <declare-styleable name="StatusViewLayout">
+        <attr name="sv_empty_layout" format="reference|integer" />
+        <attr name="sv_error_layout" format="reference|integer" />
+        <attr name="sv_load_layout" format="reference|integer" />
+        <attr name="sv_network_layout" format="reference|integer" />
+        <attr name="sv_status" format="integer" />
+    </declare-styleable>
+
+
+</resources>

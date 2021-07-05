@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/movieContainerLL"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/movieIV"
+            android:layout_width="match_parent"
+            android:layout_height="105dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/m_home_default_bg" />
+
+        <TextView
+            android:id="@+id/tagTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:background="#FE4562"
+            android:paddingBottom="1dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="1dp"
+            android:text="热播"
+            android:layout_marginEnd="9dp"
+            android:textColor="#fff"
+            android:textSize="10sp" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_gravity="bottom"
+            android:src="@drawable/shape_shouye_page_movie" />
+
+        <TextView
+            android:id="@+id/movieTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|bottom"
+            android:padding="5dp"
+            android:layout_marginEnd="2dp"
+            android:text="12-14期"
+            android:textColor="#fff"
+            android:textSize="11sp" />
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="10dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:id="@+id/movieNameTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="毒液：致命的致命的致命的致命的致命的致命的致命的致命的致命的致命的"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/movieDescTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="漫威人气反派英雄漫威人气反派英雄漫威人气反派英雄漫威人气反派英雄漫威人气反派英雄漫威人气反派英雄漫威人气反派英雄"
+            android:textColor="#9C9C9C"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

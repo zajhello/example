@@ -1,0 +1,52 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+    defaultConfig {
+        //如果是独立模块，则使用当前组件的包名
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            //混淆
+            minifyEnabled true
+            //Zipalign优化
+            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dataBinding {
+        enabled true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    //统一资源前缀，规范资源引用
+    resourcePrefix "common_"
+}
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    api project(':dxbase')
+    api rootProject.ext.facebook["stetho-okhttp3"]
+    //阿里路由框架
+    api rootProject.ext.dependencies["arouter-api"]
+
+    api rootProject.ext.dependencies["autosize"]
+
+    api 'com.ulfy.android.controls:shape-layout:1.0.2'
+    api 'com.ulfy.android.controls:fingerfollow-layout:1.0.1'
+    api 'com.github.xiaohaibin:XBanner:1.5.1'
+    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
+}

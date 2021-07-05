@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:binding="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.kingkong.module_main.viewmodel.AdsModel" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/splash"
+            binding:layout_constraintBottom_toBottomOf="parent"
+            binding:layout_constraintEnd_toEndOf="parent"
+            binding:layout_constraintStart_toStartOf="parent"
+            binding:layout_constraintTop_toTopOf="parent" />
+
+        <com.ulfy.android.controls.ShapeLayout
+            android:id="@+id/timeSL"
+            android:layout_width="57dp"
+            android:layout_height="24dp"
+            android:layout_gravity="right"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="25dp"
+            binding:isVisible="@{viewModel.timeSLVisible}"
+            binding:layout_constraintEnd_toEndOf="parent"
+            binding:layout_constraintTop_toTopOf="parent"
+            binding:layout_shape="rect"
+            binding:onClickCommand="@{viewModel.adOnClickCommand}"
+            binding:rect_radius="100dp">
+
+            <TextView
+                android:id="@+id/timeTV"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#3000"
+                android:gravity="center"
+                tools:text="1212121"
+                android:text="@{viewModel.timerText}"
+                android:textColor="#fff" />
+
+        </com.ulfy.android.controls.ShapeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

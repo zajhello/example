@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.kingkong.module_main">
+
+    <application android:theme="@style/AppTheme">
+        <activity
+            android:name=".activity.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".autoSize.DemoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/activityTheme" />
+        <activity
+            android:name=".autoSize.CustomAdaptActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/activityTheme" />
+        <activity
+            android:name=".autoSize.FragmentHost"
+            android:screenOrientation="portrait"
+            android:theme="@style/activityTheme" />
+    </application>
+
+</manifest>

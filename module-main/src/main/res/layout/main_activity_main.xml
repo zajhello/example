@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/contentLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.kingkong.common_library.widget.NoAnimationViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/divide" />
+
+
+    <View
+        android:id="@+id/divide"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@+id/app_bottom_navigation"
+        android:background="@color/divide_line" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/app_bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        app:tabBackground="@android:color/transparent"
+        app:tabIndicatorHeight="0dp"
+        app:tabPaddingEnd="0dp"
+        app:tabPaddingStart="0dp"
+        app:tabRippleColor="@android:color/transparent" />
+
+</RelativeLayout>

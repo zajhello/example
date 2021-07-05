@@ -1,0 +1,5 @@
+include ':module-main'
+include ':module-login'
+include ':common-library'
+include ':app','dxbase'
+rootProject.name = "dxmovie"

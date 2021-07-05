@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--<FrameLayout -->
+<!--    android:id="@+id/adverTisementFL"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content">-->
+
+    <com.kingkong.common_library.widget.MyBanner
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/advertisementXB"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        app:AutoPlayTime="3000"
+        app:clipChildrenLeftRightMargin="10dp"
+        app:clipChildrenTopBottomMargin="0dp"
+        app:isAutoPlay="false"
+        app:isClipChildrenMode="true"
+        app:isHandLoop="true"
+        app:isShowIndicatorOnlyOne="true"
+        app:isShowNumberIndicator="false"
+        app:pageChangeDuration="800"
+        app:pointsContainerBackground="@drawable/shape_shouye_page_movie"
+        app:pointsPosition="RIGHT"
+        app:pointsVisibility="false"
+        app:tipTextSize="16sp"
+        app:viewpagerMargin="3dp" />
+
+<!--</FrameLayout>-->

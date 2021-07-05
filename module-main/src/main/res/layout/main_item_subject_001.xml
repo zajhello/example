@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="29dp"
+        android:layout_marginEnd="12dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/titleTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:layout_weight="1"
+            android:text="全球院线大片抢“鲜”看"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/moreLL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:text="更多"
+                android:textColor="#9C9C9C"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:layout_width="8dp"
+                android:layout_height="10dp"
+                android:src="@drawable/more" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 一个电影一行 -->
+    <LinearLayout
+        android:id="@+id/movieBigLL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="14dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/movieBigIV"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/m_home_default_bg" />
+
+            <TextView
+                android:id="@+id/movieBigTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|bottom"
+                android:padding="5dp"
+                android:text="12-16期"
+                android:textColor="#fff" />
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="12dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/movieBigNameTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="火星情报局"
+                android:textColor="#222222"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/movieBigDescTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:text="看颜值高的人如何在火车上玩狼人杀"
+                android:textColor="#999999"
+                android:textSize="13sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.kingkong.common_library.widget.GridViewLayout
+        android:id="@+id/movieGVL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layoutColumnCount="3"
+        app:layoutDividerHeight="2dp" />
+
+    <View
+        android:id="@+id/bottomLine"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="12sp"
+        android:background="#ffebebeb" />
+
+    <LinearLayout
+        android:id="@+id/seeMoreAndRefreshLL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <LinearLayout
+            android:id="@+id/seeMoreLL"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:text="看更多"
+                android:textColor="#999999"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:layout_width="7dp"
+                android:layout_height="14dp"
+                android:src="@drawable/m_arrow_right_blue_icon" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/refreshLL"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:text="换一换"
+                android:textColor="#999999"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="15dp"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/m_home_refresh_icon" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background_dialog">#88000000</color>
+
+    <color name="DDFFFFFF_AA000000">#DDFFFFFF</color>
+    <color name="AA000000">#AA000000</color>
+    <color name="color_toast">#FFFFFF</color>
+
+    <color name="bottom_tab_normal">#848493</color>
+    <color name="bottom_tab_select">#367DFD</color>
+
+    <color name="grey_e5">#E5E5E5</color>
+    <color name="divide_line">#F2F2F2</color>
+    <color name="color_grey_999999">#999999</color>
+
+</resources>

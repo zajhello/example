@@ -1,0 +1,26 @@
+<resources>
+
+    <!-- 非复用ListView -->
+    <declare-styleable name="ListViewLayout">
+        <attr name="layoutDivider" />
+        <attr name="layoutDividerHeight" />
+        <attr name="layoutAverage" format="boolean" />
+        <attr name="layoutPlaceHolderCount" format="integer" />
+        <attr name="layoutAutoScale" format="boolean" />
+    </declare-styleable>
+
+    <attr name="layoutDivider" format="color|reference" />
+    <attr name="layoutDividerHeight" format="dimension|enum">
+        <enum name="fill_avaliable" value="-1" />
+    </attr>
+
+    <!-- 非复用GridView -->
+    <declare-styleable name="GridViewLayout">
+        <attr name="layoutColumnCount" format="integer" />
+        <attr name="layoutDivider" />
+        <attr name="layoutDividerHeight" />
+    </declare-styleable>
+
+
+
+</resources>

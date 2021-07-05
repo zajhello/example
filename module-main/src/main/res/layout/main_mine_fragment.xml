@@ -1,0 +1,35 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.kingkong.module_main.viewmodel.MineModel" />
+    </data>
+
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/srlRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <com.dxmovie.dxbase.widget.StatusViewLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:sv_status="@{viewModel.statusObservable}">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </com.dxmovie.dxbase.widget.StatusViewLayout>
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+
+</layout>

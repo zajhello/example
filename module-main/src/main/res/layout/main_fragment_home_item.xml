@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="com.dxmovie.dxbase.widget.LayoutManager" />
+
+
+        <variable
+            name="viewModel"
+            type="com.kingkong.module_main.viewmodel.HomeItemModel" />
+    </data>
+
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/srlRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:autoLoadMore="@{viewModel.isAutoLoadMore}"
+        app:autoRefresh="@{viewModel.isAutoRefresh}"
+        app:canLoadMore="@{viewModel.canLoadMore}"
+        app:enable="@{viewModel.enable}"
+        app:loadMoreCommand="@{viewModel.loadmoreCommand}"
+        app:refreshCommand="@{viewModel.refreshCommand}">
+
+        <com.dxmovie.dxbase.widget.StatusViewLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:sv_status="@{viewModel.statusObservable}">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:adapter="@{viewModel.itemAdapter}"
+                app:layoutManagers="@{LayoutManager.linear()}" />
+
+        </com.dxmovie.dxbase.widget.StatusViewLayout>
+
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+</layout>
