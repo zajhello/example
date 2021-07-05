@@ -15,7 +15,6 @@ import com.kingkong.module_login.viewmodel.LoginModel;
 
 @Route(path = RouterActivityPath.Login.PAGER_LOGIN)
 public class LoginActivity extends DXBaseActivity<LoginActivityLoginBinding, LoginModel> {
-
     @Override
     public int getContentViewLayout(Bundle savedInstanceState) {
         return R.layout.login_activity_login;
