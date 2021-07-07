@@ -65,9 +65,7 @@ class LoadingDialogHelper private constructor() {
                                 dismiss()
                             }
                         }
-
                     }
-
                 }
     }
 
@@ -99,9 +97,7 @@ class LoadingDialogHelper private constructor() {
                 }
             }
         }
-
     }
-
 }
 
 

@@ -33,10 +33,10 @@ open class BaseViewModel : LifecycleViewModel() {
          *
          */
         @JvmOverloads
-        open fun showLoadingDialog(type:Int = LoadingDialog.TYPE.WEAK, messageFactory: (() -> Message)? = null) {
+        open fun showLoadingDialog(type: Int = LoadingDialog.TYPE.WEAK, messageFactory: (() -> Message)? = null) {
             var message = if (messageFactory != null) {
                 messageFactory()
-            }else {
+            } else {
                 Message()
             }
             message.arg1 = type
@@ -52,7 +52,7 @@ open class BaseViewModel : LifecycleViewModel() {
         open fun hideLoadingDialog(messageFactory: (() -> Message)? = null) {
             var message = if (messageFactory != null) {
                 messageFactory()
-            }else {
+            } else {
                 Message()
             }
             message.what = TYPE.HIDELOADINGDIALOG
@@ -70,7 +70,7 @@ open class BaseViewModel : LifecycleViewModel() {
         open fun showLoading(messageFactory: (() -> Message)? = null) {
             var message = if (messageFactory != null) {
                 messageFactory()
-            }else {
+            } else {
                 Message()
             }
             message.what = TYPE.SHOWLOADING
@@ -88,7 +88,7 @@ open class BaseViewModel : LifecycleViewModel() {
         open fun showContent(messageFactory: (() -> Message)? = null) {
             var message = if (messageFactory != null) {
                 messageFactory()
-            }else {
+            } else {
                 Message()
             }
             message.what = TYPE.SHOWCONTENT
@@ -106,7 +106,7 @@ open class BaseViewModel : LifecycleViewModel() {
         open fun showError(messageFactory: (() -> Message)? = null) {
             var message = if (messageFactory != null) {
                 messageFactory()
-            }else {
+            } else {
                 Message()
             }
             message.what = TYPE.SHOWERROR
@@ -124,7 +124,7 @@ open class BaseViewModel : LifecycleViewModel() {
         open fun showEmpty(messageFactory: (() -> Message)? = null) {
             var message = if (messageFactory != null) {
                 messageFactory()
-            }else {
+            } else {
                 Message()
             }
             message.what = TYPE.SHOWEMPTY
@@ -142,7 +142,7 @@ open class BaseViewModel : LifecycleViewModel() {
         open fun showNoNetwork(messageFactory: (() -> Message)? = null) {
             var message = if (messageFactory != null) {
                 messageFactory()
-            }else {
+            } else {
                 Message()
             }
             message.what = TYPE.SHOWNONETWORK
@@ -173,16 +173,16 @@ open class BaseViewModel : LifecycleViewModel() {
          * 一般控制 [com.android.base.list.StatusViewLayout]
          * 在 [com.dxmovie.dxbase.fragment.XBaseFragment.showToast]
          * 或 [com.dxmovie.dxbase.activity.XBaseActivity.showToast] 回调
-         * 
+         *
          * @param content toast 内容
          * @param type toast 种类，有成功、错误、警告、消息四种 [com.android.ui.toast.ToastAlertUtil]
          *             默认error
          */
         @JvmOverloads
-        open fun showToast(content:String?, type: Int, messageFactory: (() -> Message)? = null) {
+        open fun showToast(content: String?, type: Int = LoadingDialog.TYPE.WEAK, messageFactory: (() -> Message)? = null) {
             var message = if (messageFactory != null) {
                 messageFactory()
-            }else {
+            } else {
                 Message()
             }
             message.what = TYPE.TOAST
@@ -204,7 +204,7 @@ open class BaseViewModel : LifecycleViewModel() {
         fun handleMessage(statusLiveData: MutableLiveData<Message>?, message: Message) {
             if (isMainThread()) {
                 statusLiveData?.value = message
-            }else {
+            } else {
                 statusLiveData?.postValue(message)
             }
         }
@@ -231,5 +231,4 @@ open class BaseViewModel : LifecycleViewModel() {
             }
         }
     }
-
 }

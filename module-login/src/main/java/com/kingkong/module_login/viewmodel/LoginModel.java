@@ -25,22 +25,24 @@ public class LoginModel extends BaseViewModel {
     //登录按钮的点击事件
     public BindingCommand loginOnClickCommand = new BindingCommand(() -> {
 
-//        PrecondRepository.getInstance()
-//                .getSecretKetWithCache(new BaseRequest<SecretKeyRequest>(new SecretKeyRequest()))
-//                .doOnSubscribe(disposable -> getUi().showLoadingDialog())
-//                .doFinally(() -> getUi().hideLoadingDialog())
-//                .as(RxUtils.bindLifecycle(this))
-//                .subscribe(baseResponse -> {
-//                    String secret = baseResponse.getDatas().getSecret();
-//                    EncryUtil.syncDecryptKey(secret);
+        PrecondRepository.getInstance()
+                .getSecretKetWithCache(new BaseRequest<SecretKeyRequest>(new SecretKeyRequest()))
+                .doOnSubscribe(disposable -> getUi().showLoadingDialog())
+                .doFinally(() -> getUi().hideLoadingDialog())
+                .as(RxUtils.bindLifecycle(this))
+                .subscribe(baseResponse -> {
+                    String secret = baseResponse.getDatas().getSecret();
+                    EncryUtil.syncDecryptKey(secret);
 //                    ToastUtils.showShort(secret);
-//                    ARouter.getInstance().build(RouterActivityPath.Main.PAGER_MAIN).navigation();
-//                }, throwable -> {
+                    getUi().showToast(secret);
+                    ARouter.getInstance().build(RouterActivityPath.Main.PAGER_MAIN).navigation();
+                }, throwable -> {
 //                    ToastUtils.showShort(throwable.getMessage());
-//                });
+                    getUi().showToast(throwable.getMessage());
+                });
 
         ToastUtils.showShort("防抖click写法");
-        ARouter.getInstance().build(RouterActivityPath.Main.PAGER_MAIN).navigation();
+      //  ARouter.getInstance().build(RouterActivityPath.Main.PAGER_MAIN).navigation();
         return null;
     });
 

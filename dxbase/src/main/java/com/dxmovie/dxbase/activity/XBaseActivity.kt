@@ -147,7 +147,7 @@ open class XBaseActivity : BaseViewModelActivity() {
      * @param message 提示信息
      */
     open fun showToast(message: Message) {
-        ToastUtils.showShort("信息Toast提示")
+        ToastUtils.showShort(message.obj.toString())
     }
 
     /**
