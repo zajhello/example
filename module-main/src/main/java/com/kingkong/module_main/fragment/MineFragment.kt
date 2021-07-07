@@ -21,7 +21,7 @@ class MineFragment : DXBaseFragment<MainMineFragmentBinding, MineModel>() {
         fun newInstance(): MineFragment = MineFragment()
     }
 
-    override fun getContentViewLayout(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): Int {
+    override fun getContentViewLayout(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): Int {
         return R.layout.main_mine_fragment
     }
 
@@ -29,7 +29,7 @@ class MineFragment : DXBaseFragment<MainMineFragmentBinding, MineModel>() {
         return BR.viewModel
     }
 
-    override fun getViewModel(): MineModel? {
+    override fun getViewModel(): MineModel {
         return createViewModel(MineModel::class.java)
     }
 

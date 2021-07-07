@@ -15,9 +15,9 @@ abstract class DXBaseFragment<V : ViewDataBinding, VM : BaseViewModel> : XBaseFr
     var vModel: VM? = null
     private var viewModelId = 0
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        binding = DataBindingUtil.inflate(inflater!!, getContentViewLayout(inflater, container, savedInstanceState), container, false)
-        return binding?.root
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+        binding = DataBindingUtil.inflate(inflater, getContentViewLayout(inflater, container, savedInstanceState), container, false)
+        return binding!!.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -42,8 +42,7 @@ abstract class DXBaseFragment<V : ViewDataBinding, VM : BaseViewModel> : XBaseFr
      *
      * @return 布局layout的id
      */
-    abstract fun getContentViewLayout(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): Int
-
+    abstract fun getContentViewLayout(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): Int
     /**
      * 初始化ViewModel的id
      *

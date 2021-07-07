@@ -12,7 +12,7 @@ import com.kingkong.module_main.viewmodel.HomeItemModel
 import kotlinx.android.synthetic.main.main_fragment_home_item.*
 
 
-class HomeItemFragment : DXBaseFragment<MainFragmentHomeItemBinding?, HomeItemModel>() {
+class HomeItemFragment : DXBaseFragment<MainFragmentHomeItemBinding, HomeItemModel>() {
 
     companion object {
         val Arg = HomeItemFragment::class.java.name
@@ -25,7 +25,7 @@ class HomeItemFragment : DXBaseFragment<MainFragmentHomeItemBinding?, HomeItemMo
         }
     }
 
-    override fun getContentViewLayout(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): Int {
+    override fun getContentViewLayout(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): Int {
         return R.layout.main_fragment_home_item
     }
 

@@ -25,39 +25,39 @@ public class LoginModel extends BaseViewModel {
     //登录按钮的点击事件
     public BindingCommand loginOnClickCommand = new BindingCommand(() -> {
 
-        PrecondRepository.getInstance()
-                .getSecretKetWithCache(new BaseRequest<SecretKeyRequest>(new SecretKeyRequest()))
-                .doOnSubscribe(disposable -> getUi().showLoadingDialog())
-                .doFinally(() -> getUi().hideLoadingDialog())
-                .as(RxUtils.bindLifecycle(this))
-                .subscribe(baseResponse -> {
-                    String secret = baseResponse.getDatas().getSecret();
-                    EncryUtil.syncDecryptKey(secret);
-                    ToastUtils.showShort(secret);
-                    ARouter.getInstance().build(RouterActivityPath.Main.PAGER_MAIN).navigation();
-                }, throwable -> {
-                    ToastUtils.showShort(throwable.getMessage());
-                });
+//        PrecondRepository.getInstance()
+//                .getSecretKetWithCache(new BaseRequest<SecretKeyRequest>(new SecretKeyRequest()))
+//                .doOnSubscribe(disposable -> getUi().showLoadingDialog())
+//                .doFinally(() -> getUi().hideLoadingDialog())
+//                .as(RxUtils.bindLifecycle(this))
+//                .subscribe(baseResponse -> {
+//                    String secret = baseResponse.getDatas().getSecret();
+//                    EncryUtil.syncDecryptKey(secret);
+//                    ToastUtils.showShort(secret);
+//                    ARouter.getInstance().build(RouterActivityPath.Main.PAGER_MAIN).navigation();
+//                }, throwable -> {
+//                    ToastUtils.showShort(throwable.getMessage());
+//                });
 
         ToastUtils.showShort("防抖click写法");
-
+        ARouter.getInstance().build(RouterActivityPath.Main.PAGER_MAIN).navigation();
         return null;
     });
 
     public void click(View view) {
         ToastUtils.showShort("不防抖click写法");
-
-        PrecondRepository.getInstance()
-                .getSecretKet(new BaseRequest<SecretKeyRequest>(new SecretKeyRequest()))
-                .doOnSubscribe(disposable -> getUi().showLoadingDialog())
-                .doFinally(() -> getUi().hideLoadingDialog())
-                .as(RxUtils.bindLifecycle(this))
-                .subscribe(baseResponse -> {
-                    String secret = baseResponse.getDatas().getSecret();
-                    EncryUtil.syncDecryptKey(secret);
-                    ToastUtils.showShort(secret);
-                }, throwable -> {
-                    ToastUtils.showShort(throwable.getMessage());
-                });
+//        PrecondRepository.getInstance()
+//                .getSecretKet(new BaseRequest<SecretKeyRequest>(new SecretKeyRequest()))
+//                .doOnSubscribe(disposable -> getUi().showLoadingDialog())
+//                .doFinally(() -> getUi().hideLoadingDialog())
+//                .as(RxUtils.bindLifecycle(this))
+//                .subscribe(baseResponse -> {
+//                    String secret = baseResponse.getDatas().getSecret();
+//                    EncryUtil.syncDecryptKey(secret);
+//                    ToastUtils.showShort(secret);
+//                }, throwable -> {
+//                    ToastUtils.showShort(throwable.getMessage());
+//                });
+        ARouter.getInstance().build(RouterActivityPath.Main.PAGER_DEMO).navigation();
     }
 }

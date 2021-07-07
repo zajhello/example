@@ -16,7 +16,7 @@ import com.kingkong.module_main.widget.MagicTabPagerLinkage
 import kotlinx.android.synthetic.main.main_fragment_home.*
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.indicators.LinePagerIndicator
 
-class HomeFragment : DXBaseFragment<MainFragmentHomeBinding?, HomeModel>() {
+class HomeFragment : DXBaseFragment<MainFragmentHomeBinding, HomeModel>() {
 
 
     companion object {
