@@ -1,48 +1,44 @@
-package com.dxmovie.dxbase.dialog;
+package com.dxmovie.dxbase.dialog
 
+interface IBaseDialog {
 
-/**
- * @desc
- */
-public interface IBaseDialog {
     /**
      * 返回dialog的布局文件
      *
      * @return
      */
-    int initLayout();
+    fun initLayout(): Int
 
     /**
      * 初始化view事件
      */
-    void initView();
+    fun initView()
 
     /**
      * 是否可以取消
      *
      * @return
      */
-    boolean isCancel();
+    fun isCancel(): Boolean
 
     /**
      * 点击外部是否可以取消
      *
      * @return
      */
-    boolean isCancelOutside();
+    fun isCancelOutside(): Boolean
 
     /**
      * 自定义Layout
      *
      * @return
      */
-    int getCustomLayout();
+    fun getCustomLayout(): Int
 
     /**
      * 是否全屏
      *
      * @return
      */
-    boolean isFullScreen();
-
+    fun isFullScreen(): Boolean
 }

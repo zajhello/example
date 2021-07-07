@@ -32,8 +32,8 @@ public class LaunchActivity extends BaseActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                ARouter.getInstance().build(RouterActivityPath.Main.PAGER_MAIN).navigation();
-//                ARouter.getInstance().build(RouterActivityPath.Login.PAGER_LOGIN).navigation();
+//                ARouter.getInstance().build(RouterActivityPath.Main.PAGER_MAIN).navigation();
+                ARouter.getInstance().build(RouterActivityPath.Login.PAGER_LOGIN).navigation();
                 finish();
             }
         }, 500);

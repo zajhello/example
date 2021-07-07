@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.annotation.CallSuper
 import androidx.fragment.app.Fragment
+import com.dxmovie.dxbase.activity.BaseActivity
 import com.dxmovie.dxbase.utils.LoadingDialogHelper
 import com.dxmovie.dxbase.utils.extention.no
 import com.dxmovie.dxbase.widget.LoadingDialog
@@ -60,7 +61,7 @@ open class BaseFragment : Fragment() {
         super.onDestroyView()
         isLoaded = false
         rootView = null
-        (activity is com.dxmovie.dxbase.activity.BaseActivity).no {
+        (activity is BaseActivity).no {
             //如果不是BaseActivity 就调用清理，是就不调用，因为在BaseActivity中有调用
             LoadingDialogHelper.instance.clearLoading()
         }

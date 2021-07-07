@@ -11,5 +11,5 @@ data class AdsRequest(
         val sign: String = "android",
         val timestamp: Long = System.currentTimeMillis(),
         val appkey: String = "dxsp",
-        val other: String,
+        val other: String
 ) : Serializable

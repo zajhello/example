@@ -39,7 +39,7 @@ public class LoginModel extends BaseViewModel {
                     ToastUtils.showShort(throwable.getMessage());
                 });
 
-//        ToastUtils.showShort("防抖click写法");
+        ToastUtils.showShort("防抖click写法");
 
         return null;
     });
