@@ -4,8 +4,6 @@ import com.dxmovie.dxbase.utils.extention.yes
 
 
 /**
- *@author Levi
- *@date 2020/5/10
  *@desc dataBinding click command
  */
 

@@ -4,9 +4,7 @@ import android.app.Application;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.dxmovie.dxbase.core.BaseConfig;
-import com.dxmovie.dxbase.utils.PixelUtil;
 import com.dxmovie.dxbase.utils.TimeUtil;
-import com.dxmovie.dxbase.widget.LoadingDialog;
 import com.kingkong.common_library.helper.AppHelper;
 import com.kingkong.common_library.http.DXHttpProvider;
 import com.kingkong.common_library.utils.EncryUtil;

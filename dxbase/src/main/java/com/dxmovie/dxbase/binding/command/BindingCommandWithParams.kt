@@ -3,8 +3,6 @@ package com.dxmovie.dxbase.binding.command
 import com.dxmovie.dxbase.utils.extention.yes
 
 /**
- *@author Levi
- *@date 2020/5/22
  *@desc dataBinding click command  带有返回值
  */
 class BindingCommandWithParams<T> {
