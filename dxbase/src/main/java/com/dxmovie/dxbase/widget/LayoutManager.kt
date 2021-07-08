@@ -17,7 +17,7 @@ class LayoutManager constructor() {
          */
         @JvmStatic
         fun linear(): RecyclerView.LayoutManager? {
-            return LinearLayoutManager(AppManager.getsApplication())
+            return LinearLayoutManager(AppManager.sApplication)
         }
 
         /**
@@ -25,7 +25,7 @@ class LayoutManager constructor() {
          */
         @JvmStatic
         fun linear(@Orientation orientation: Int): RecyclerView.LayoutManager? {
-            return LinearLayoutManager(AppManager.getsApplication(), orientation, false)
+            return LinearLayoutManager(AppManager.sApplication, orientation, false)
         }
 
         /**
@@ -33,7 +33,7 @@ class LayoutManager constructor() {
          */
         @JvmStatic
         fun grid(spanCount: Int): RecyclerView.LayoutManager? {
-            return GridLayoutManager(AppManager.getsApplication(), spanCount)
+            return GridLayoutManager(AppManager.sApplication, spanCount)
         }
 
         /**
@@ -41,7 +41,7 @@ class LayoutManager constructor() {
          */
         @JvmStatic
         fun grid(spanCount: Int, isScroll: Boolean): RecyclerView.LayoutManager? {
-            return object : GridLayoutManager(AppManager.getsApplication(), spanCount) {
+            return object : GridLayoutManager(AppManager.sApplication, spanCount) {
                 override fun canScrollVertically(): Boolean {
                     return isScroll && super.canScrollVertically()
                 }
@@ -53,7 +53,7 @@ class LayoutManager constructor() {
          */
         @JvmStatic
         fun grid(spanCount: Int, @Orientation orientation: Int): RecyclerView.LayoutManager? {
-            return GridLayoutManager(AppManager.getsApplication(), spanCount, orientation, false)
+            return GridLayoutManager(AppManager.sApplication, spanCount, orientation, false)
         }
 
         /**

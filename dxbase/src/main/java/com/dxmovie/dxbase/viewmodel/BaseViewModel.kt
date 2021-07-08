@@ -22,6 +22,7 @@ open class BaseViewModel : LifecycleViewModel() {
 
         /**
          * loading 之类的LiveData，消息类型是handle的Message类，方便扩展
+         * postvalue 极短时间内发送多次，只能执行一次
          */
         var statusLiveData: MutableLiveData<Message>? = MutableLiveData<Message>()
 
@@ -37,7 +38,7 @@ open class BaseViewModel : LifecycleViewModel() {
             var message = if (messageFactory != null) {
                 messageFactory()
             } else {
-                Message()
+                Message.obtain();
             }
             message.arg1 = type
             message.what = TYPE.SHOWLOADINGDIALOG
@@ -53,7 +54,7 @@ open class BaseViewModel : LifecycleViewModel() {
             var message = if (messageFactory != null) {
                 messageFactory()
             } else {
-                Message()
+                Message.obtain();
             }
             message.what = TYPE.HIDELOADINGDIALOG
             statusLiveData?.postValue(message)
@@ -71,7 +72,7 @@ open class BaseViewModel : LifecycleViewModel() {
             var message = if (messageFactory != null) {
                 messageFactory()
             } else {
-                Message()
+                Message.obtain();
             }
             message.what = TYPE.SHOWLOADING
             statusLiveData?.postValue(message)
@@ -89,7 +90,7 @@ open class BaseViewModel : LifecycleViewModel() {
             var message = if (messageFactory != null) {
                 messageFactory()
             } else {
-                Message()
+                Message.obtain();
             }
             message.what = TYPE.SHOWCONTENT
             statusLiveData?.postValue(message)
@@ -107,7 +108,7 @@ open class BaseViewModel : LifecycleViewModel() {
             var message = if (messageFactory != null) {
                 messageFactory()
             } else {
-                Message()
+                Message.obtain();
             }
             message.what = TYPE.SHOWERROR
             statusLiveData?.postValue(message)
@@ -125,7 +126,7 @@ open class BaseViewModel : LifecycleViewModel() {
             var message = if (messageFactory != null) {
                 messageFactory()
             } else {
-                Message()
+                Message.obtain();
             }
             message.what = TYPE.SHOWEMPTY
             statusLiveData?.postValue(message)
@@ -143,7 +144,7 @@ open class BaseViewModel : LifecycleViewModel() {
             var message = if (messageFactory != null) {
                 messageFactory()
             } else {
-                Message()
+                Message.obtain();
             }
             message.what = TYPE.SHOWNONETWORK
             statusLiveData?.postValue(message)
@@ -183,7 +184,7 @@ open class BaseViewModel : LifecycleViewModel() {
             var message = if (messageFactory != null) {
                 messageFactory()
             } else {
-                Message()
+                Message.obtain();
             }
             message.what = TYPE.TOAST
             message.obj = content

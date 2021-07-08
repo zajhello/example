@@ -53,12 +53,12 @@ object AppHelper {
 
     @JvmStatic
     fun init() {
-        AppManager.getInstance().addOnAppStatusChangedListener(object : AppManager.OnAppStatusChangedListener {
-            override fun onForeground(activity: Activity) {
+        AppManager.getInstance()!!.addOnAppStatusChangedListener(object : AppManager.OnAppStatusChangedListener {
+            override fun onForeground(activity: Activity?) {
                 appStatusChanged(true)
             }
 
-            override fun onBackground(activity: Activity) {
+            override fun onBackground(activity: Activity?) {
                 appStatusChanged(false)
             }
         })

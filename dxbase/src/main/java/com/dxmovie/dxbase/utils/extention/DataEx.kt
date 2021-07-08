@@ -25,4 +25,4 @@ fun Double.toPX(): Double = this * getDisplayMetrics().density + 0.5f
 fun Double.toSP(): Double = this * getDisplayMetrics().scaledDensity
 
 /** 获取 displayMetrics */
-fun getDisplayMetrics(): DisplayMetrics = AppManager.getsApplication().resources.displayMetrics
+fun getDisplayMetrics(): DisplayMetrics = AppManager.sApplication?.resources!!.displayMetrics
