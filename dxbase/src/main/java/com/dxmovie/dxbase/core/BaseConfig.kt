@@ -2,7 +2,7 @@ package com.dxmovie.dxbase.core
 
 object BaseConfig {
 
-    var ENV = Environment.DEV
+    private var ENV = Environment.DEV
 
     @JvmStatic
     fun isDEV(): Boolean {
