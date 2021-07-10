@@ -49,8 +49,8 @@ class DxTokenInterceptor : TokenInterceptor() {
     override fun isDeckeyExpired(response: Response?): String {
 
         var httpUrl = response!!.request().url().toString()
-        val responseBody = response!!.peekBody(Long.MAX_VALUE)
-        var body = responseBody!!.string()
+        val responseBody = response.peekBody(Long.MAX_VALUE)
+        var body = responseBody.string()
         body = EncryUtil.decryptBody(EncryUtil.isSecretRequest(httpUrl), body)
         return body
     }

@@ -47,7 +47,7 @@ public class RxUtils {
      */
     public static <T extends BaseResponse> ObservableTransformer<T, T> exceptionIoTransformer() {
         return upstream ->
-                upstream.lift(new ApiErrorOperator<T>())
+                upstream.lift(new ApiErrorOperator<>())
                         .subscribeOn(Schedulers.io())
                         .retryWhen(new RetryWithDelay(2,1))
                         .observeOn(AndroidSchedulers.mainThread());
@@ -58,7 +58,7 @@ public class RxUtils {
      */
     public static <T extends BaseResponse> FlowableTransformer<T, T> exceptionIoTransformerByFlowable() {
         return upstream ->
-                upstream.lift(new ApiErrorOperatorByFlowable<T>())
+                upstream.lift(new ApiErrorOperatorByFlowable<>())
                         .subscribeOn(Schedulers.io())
                         .retryWhen(new RetryWithDelayByFlowable(3,1))
                         .observeOn(AndroidSchedulers.mainThread());

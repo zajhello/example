@@ -211,8 +211,8 @@ object STHttp {
 
         val builder = OkHttpClient.Builder()
         val sslParams = SslSocketFactory.getSslSocketFactory()
-        builder.sslSocketFactory(sslParams.sSLSocketFactory, sslParams.trustManager)
-        builder.hostnameVerifier { _, _ -> true }
+        builder.sslSocketFactory(sslParams!!.sSLSocketFactory, sslParams!!.trustManager)
+        builder.hostnameVerifier(SslSocketFactory.UnSafeHostnameVerifier)
         builder.connectTimeout(if (provider.connectTimeOut != 0L)
             provider.connectTimeOut
         else
