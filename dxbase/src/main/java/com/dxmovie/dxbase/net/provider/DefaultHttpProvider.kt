@@ -1,13 +1,8 @@
 package com.dxmovie.dxbase.net.provider
 
-import android.os.Build
-import com.dxmovie.dxbase.base.AppManager
 import com.dxmovie.dxbase.core.BaseConfig
 import com.dxmovie.dxbase.response.BaseResponse
-import com.dxmovie.dxbase.utils.AppUtils
-import com.dxmovie.dxbase.utils.DeviceUtils
 import com.dxmovie.dxbase.utils.GsonUtils
-import com.dxmovie.dxbase.utils.MD5Util
 import okhttp3.*
 import okhttp3.internal.http.HttpCodec
 import kotlin.jvm.Throws
