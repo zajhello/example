@@ -52,6 +52,7 @@ public class MainActivity extends BaseActivity {
         initAdsDialog();
     }
 
+
     private void initAdsDialog() {
         mAdsDialog = new AdsDialogFragment();
         mAdsDialog.setCanceledOnTouchOutside(false);

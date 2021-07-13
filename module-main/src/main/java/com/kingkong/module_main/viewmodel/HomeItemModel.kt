@@ -74,7 +74,7 @@ class HomeItemModel : BaseViewModel() {
             bean3.type = HomeItemType.HORIZONTAL.value
             bean4.type = HomeItemType.MOVIE.value
             bean5.type = HomeItemType.HORIZONTAL.value
-            itemAdapter!!.list = listOf(bean1, bean2, bean3, bean4, bean5)
+            itemAdapter!!.setList(listOf(bean1, bean2, bean3, bean4, bean5))
             isAutoRefresh.set(false)
             enable.set(true)
 
