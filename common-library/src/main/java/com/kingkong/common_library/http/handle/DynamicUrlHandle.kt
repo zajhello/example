@@ -1,8 +1,7 @@
 package com.kingkong.common_library.http.handle
 
 import com.dxmovie.dxbase.net.RequestHandle
-import com.dxmovie.dxbase.net.UrlManager.httpUrl
-import com.dxmovie.dxbase.net.UrlManager.urlChanged
+import com.dxmovie.dxbase.net.UrlManager
 import okhttp3.HttpUrl
 import okhttp3.Interceptor
 import okhttp3.Request
@@ -16,30 +15,30 @@ class DynamicUrlHandle : RequestHandle {
 
     override fun onBeforeRequest(request: Request, chain: Interceptor.Chain): Request {
 
-        if (httpUrl == null) {
+        if (UrlManager.httpUrl == null) {
             val url: String = request.url().toString()
             val pathStart: Int = url.indexOf('/', request.url().scheme().length + 3)
             val domain = url.substring(0, pathStart)
-            httpUrl = HttpUrl.parse(domain)
+            UrlManager.httpUrl = HttpUrl.parse(domain)
             return request
         }
 
-        if (!urlChanged) return request
+        if (!UrlManager.urlChanged) return request
 
         val requestUrl = request.url()
-        if (requestUrl.scheme() == httpUrl!!.scheme()
-                && requestUrl.host() == httpUrl!!.host()
-                && requestUrl.port() == httpUrl!!.port()) {
-            Timber.i("[域名切换]请求：%s 域名与当前配置：%s域名 相同不做切换", requestUrl.toString(), httpUrl.toString())
+        if (requestUrl.scheme() == UrlManager.httpUrl!!.scheme()
+                && requestUrl.host() == UrlManager.httpUrl!!.host()
+                && requestUrl.port() == UrlManager.httpUrl!!.port()) {
+            Timber.i("[域名切换]请求：%s 域名与当前配置：%s域名 相同不做切换", requestUrl.toString(), UrlManager.httpUrl.toString())
             return request
         }
 
-        Timber.i("[域名切换]请求：%s域名与当前配置：%s域名 不同自动切换", requestUrl.toString(), httpUrl.toString())
+        Timber.i("[域名切换]请求：%s域名与当前配置：%s域名 不同自动切换", requestUrl.toString(), UrlManager.httpUrl.toString())
         //创建新的请求域名
         val newHttpUrl = requestUrl.newBuilder()
-                .scheme(httpUrl!!.scheme())
-                .host(httpUrl!!.host())
-                .port(httpUrl!!.port())
+                .scheme(UrlManager.httpUrl!!.scheme())
+                .host(UrlManager.httpUrl!!.host())
+                .port(UrlManager.httpUrl!!.port())
                 .build()
 
 //        KLog.e("onBeforeRequest",newHttpUrl.toString())

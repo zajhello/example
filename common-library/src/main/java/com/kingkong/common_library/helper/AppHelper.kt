@@ -83,9 +83,9 @@ object AppHelper {
     fun appStatusChanged(foreground: Boolean) {
         //后台三个小时回来的话，强制用户登录
         if (foreground) {
-            if (SystemClock.elapsedRealtime() - toBackTime > 3 * 60 * 60 * 1000) {
-                loginOut()
-            }
+//            if (SystemClock.elapsedRealtime() - toBackTime > 3 * 60 * 60 * 1000) {
+//                loginOut()
+//            }
         }
         toBackTime = SystemClock.elapsedRealtime()
     }

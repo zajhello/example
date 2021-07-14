@@ -81,7 +81,7 @@ class DXHttpProvider : DefaultHttpProvider() {
     /**
      * 加解密数据转化
      */
-    override fun converterFactory(): Converter.Factory? {
-        return EncryConverterFactory.create()
-    }
+//    override fun converterFactory(): Converter.Factory? {
+//        return EncryConverterFactory.create()
+//    }
 }
