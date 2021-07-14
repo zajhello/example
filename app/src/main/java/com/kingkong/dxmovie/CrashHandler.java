@@ -1,4 +1,4 @@
-package com.kingkong.dxmovie1;
+package com.kingkong.dxmovie;
 
 import android.annotation.SuppressLint;
 import android.app.AlarmManager;

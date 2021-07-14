@@ -96,7 +96,6 @@ public abstract class TokenInterceptor implements Interceptor {
             ServiceException errorResponse = new ServiceException(e, -1, errorMessage);
             ResponseBody responseBody = ResponseBody.create(MediaType.parse("json"), GsonUtils.toJson(errorResponse));
 
-
             return new Response.Builder().request(request)
                     .body(responseBody)
                     .code(HttpCodec.DISCARD_STREAM_TIMEOUT_MILLIS)

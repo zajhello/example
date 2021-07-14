@@ -1,4 +1,4 @@
-package com.kingkong.dxmovie1;
+package com.kingkong.dxmovie;
 
 import android.app.Application;
 

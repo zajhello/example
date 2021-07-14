@@ -1,9 +1,7 @@
-package com.kingkong.dxmovie1;
+package com.kingkong.dxmovie;
 
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.Window;
-import android.view.WindowManager;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.dxmovie.dxbase.activity.BaseActivity;

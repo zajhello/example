@@ -2,14 +2,12 @@ package com.kingkong.common_library.interceptors
 
 import com.dxmovie.dxbase.net.UrlManager
 import com.dxmovie.dxbase.request.BaseRequest
-import com.dxmovie.dxbase.response.BaseResponse
 import com.dxmovie.dxbase.utils.GsonUtils
 import com.dxmovie.dxbase.utils.KLog
 import com.dxmovie.dxbase.utils.extention.yes
 import com.google.gson.reflect.TypeToken
-import com.kingkong.common_library.http.EncryConverterFactory
+import com.kingkong.common_library.http.DxConverterFactory
 import com.kingkong.common_library.request.SecretKeyRequest
-import com.kingkong.common_library.response.SecretKeyModel
 import com.kingkong.common_library.response.SecretKeyResponse
 import com.kingkong.common_library.source.DxApi
 import com.kingkong.common_library.utils.EncryUtil
@@ -70,7 +68,7 @@ class DxTokenInterceptor : TokenInterceptor() {
 
         val retrofit = Retrofit.Builder()
                 .baseUrl(UrlManager.getRootUrl())
-                .addConverterFactory(EncryConverterFactory.create(true))
+                .addConverterFactory(DxConverterFactory.create(true))
                 .build()
         return retrofit.create(DxApi::class.java).syncSecretKey(BaseRequest(SecretKeyRequest()))
     }
