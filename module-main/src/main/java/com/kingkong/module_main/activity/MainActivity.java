@@ -14,7 +14,6 @@ import com.dxmovie.dxbase.utils.ToastUtils;
 import com.google.android.material.tabs.TabLayout;
 import com.kingkong.common_library.adapter.FragmentXPagerAdapter;
 import com.kingkong.common_library.router.RouterActivityPath;
-import com.kingkong.module_main.MainDelayEvent;
 import com.kingkong.module_main.R;
 import com.kingkong.module_main.dlalog.AdsDialogFragment;
 import com.kingkong.module_main.fragment.HomeFragment;
@@ -46,7 +45,6 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity_main);
-        MainDelayEvent.delayEvent();
         acquireWakeLock();
         initView();
         initAdsDialog();

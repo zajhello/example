@@ -7,7 +7,6 @@ import com.dxmovie.dxbase.net.UrlManager
 import com.dxmovie.dxbase.net.provider.DefaultHttpProvider
 import com.facebook.stetho.okhttp3.StethoInterceptor
 import com.kingkong.common_library.http.handle.DynamicUrlHandle
-import com.kingkong.common_library.interceptors.DxTokenInterceptor
 import okhttp3.ConnectionPool
 import okhttp3.Dispatcher
 import okhttp3.Interceptor
@@ -48,7 +47,8 @@ class DXHttpProvider : DefaultHttpProvider() {
      * header，token拦截器
      */
     override fun interceptors(): Array<Interceptor> {
-        return arrayOf(DxTokenInterceptor())
+//        return arrayOf(DxTokenInterceptor())
+        return arrayOf()
     }
 
     /**

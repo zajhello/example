@@ -7,6 +7,7 @@ import com.google.gson.GsonBuilder
 import com.dxmovie.dxbase.net.annotation.STApi
 import com.dxmovie.dxbase.net.factory.LiveDataCallAdapterFactory
 import com.dxmovie.dxbase.net.handle.LogHandle
+import com.dxmovie.dxbase.net.interceptor.HttpInterceptor
 import com.dxmovie.dxbase.net.interceptor.HttpLogInterceptor
 import com.dxmovie.dxbase.net.provider.DefaultHttpProvider
 import okhttp3.ConnectionPool

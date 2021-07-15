@@ -32,10 +32,9 @@
 
         <activity
             android:name=".LaunchActivity"
-            android:theme="@style/Fullscreen">
+            android:theme="@style/app_fullscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

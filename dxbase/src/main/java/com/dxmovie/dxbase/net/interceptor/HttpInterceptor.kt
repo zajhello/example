@@ -1,5 +1,6 @@
-package com.dxmovie.dxbase.net
+package com.dxmovie.dxbase.net.interceptor
 
+import com.dxmovie.dxbase.net.RequestHandle
 import okhttp3.Interceptor
 import okhttp3.Response
 import java.io.IOException

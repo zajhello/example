@@ -160,7 +160,7 @@ object AppHelper {
      */
     @JvmStatic
     fun resetData() {
-        TokenInterceptor.setLoginAtomic(true)
+
     }
 
     interface OnLoginOutListener : DefaultLifecycleObserver {
