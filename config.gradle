@@ -14,13 +14,13 @@ ext {
             "junit-version"          : "4.12",
             'lifecycle'              : '2.2.0',
             'glide'                  : '4.9.0',
-            'swiperefreshlayout'     : '1.0.0',
+            'swiperefreshlayout'     : '1.1.0',
             'coroutines'             : '1.3.0',
             'kotlin'                 : '1.4.0-rc',
             'autodispose'            : '1.4.0',
             'autodisposeKotlinEx'    : '1.2.0',
-            'annotation'             : '1.1.0',
-            'coreKtx'                : '1.2.0',
+            'annotation'             : '1.2.0',
+            'coreKtx'                : '1.6.0',
             'databinding_compiler'   : '3.0.0',
     ]
     //androidx配置
