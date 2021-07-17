@@ -4,12 +4,29 @@ import android.os.Looper
 import android.os.Message
 import androidx.lifecycle.MutableLiveData
 import com.dxmovie.dxbase.widget.LoadingDialog
+import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.disposables.Disposable
+import io.reactivex.internal.util.OpenHashSet
 
 
 /**
  * 封装和 XBaseFragment/XBaseActivity的UI交互逻辑，参照[com.android.base.base.BaseViewModel] 的控制逻
  */
 open class BaseViewModel : LifecycleViewModel() {
+
+//    private  var disposable: CompositeDisposable? = null
+//
+//    open fun addDisposable(dispos: Disposable) {
+//        if (disposable == null) {
+//            disposable = CompositeDisposable()
+//        }
+//        disposable?.add(dispos)
+//    }
+//
+//    override fun onDestroy() {
+//        disposable?.dispose()
+//        super.onDestroy()
+//    }
 
     val ui: UILiveData? by lazy {
         UILiveData()

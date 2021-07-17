@@ -18,6 +18,7 @@ import com.kingkong.common_library.utils.EncryUtil
 import com.kingkong.common_library.utils.StatusViewUtils
 
 class MineModel : BaseViewModel() {
+
     override fun onCreate() {
         super.onCreate()
 

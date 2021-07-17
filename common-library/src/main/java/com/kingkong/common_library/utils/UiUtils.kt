@@ -7,6 +7,7 @@ object UiUtils {
     /**
      * 清空view的父容器，使得view被添加到其它的容器中不会发生错误
      */
+    @JvmStatic
     fun clearParent(view: View?) {
         if (view == null) {
             return
@@ -22,6 +23,7 @@ object UiUtils {
     /**
      * 设置View的点击事件，根据是否为空设置View的点击性
      */
+    @JvmStatic
     fun setViewClickListener(view: View, onClickListener: View.OnClickListener?) {
         view.setOnClickListener(onClickListener)
         view.isClickable = onClickListener != null

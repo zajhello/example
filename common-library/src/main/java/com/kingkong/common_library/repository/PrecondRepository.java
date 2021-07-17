@@ -43,7 +43,7 @@ public class PrecondRepository implements IRepository {
     }
 
     public Observable<SecretKeyResponse> getSecretKet(BaseRequest<SecretKeyRequest> secret) {
-        return cacheProviders.getSecretKet(STHttp.get(DxApi.class).getSecretKey(secret), new DynamicKey(Api.getSecret), new EvictDynamicKey(true))
+        return STHttp.get(DxApi.class).getSecretKey(secret)
                 .compose(RxUtils.exceptionIoTransformer());
     }
 }

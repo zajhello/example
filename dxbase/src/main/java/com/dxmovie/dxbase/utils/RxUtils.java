@@ -38,7 +38,7 @@ public class RxUtils {
     public static <T> ObservableTransformer<T, T> schedulersTransformer() {
         return upstream ->
                 upstream.subscribeOn(Schedulers.io())
-                        .retryWhen(new RetryWithDelay(2,1))
+                        .retryWhen(new RetryWithDelay(1,1))
                         .observeOn(AndroidSchedulers.mainThread());
     }
 
@@ -49,7 +49,7 @@ public class RxUtils {
         return upstream ->
                 upstream.lift(new ApiErrorOperator<>())
                         .subscribeOn(Schedulers.io())
-                        .retryWhen(new RetryWithDelay(2,1))
+                        .retryWhen(new RetryWithDelay(1,1))
                         .observeOn(AndroidSchedulers.mainThread());
     }
 
@@ -60,7 +60,7 @@ public class RxUtils {
         return upstream ->
                 upstream.lift(new ApiErrorOperatorByFlowable<>())
                         .subscribeOn(Schedulers.io())
-                        .retryWhen(new RetryWithDelayByFlowable(3,1))
+                        .retryWhen(new RetryWithDelayByFlowable(1,1))
                         .observeOn(AndroidSchedulers.mainThread());
     }
 

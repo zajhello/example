@@ -31,7 +31,7 @@ import java.util.concurrent.atomic.AtomicInteger
  */
 object STHttp {
 
-    const val CONNECT_TIME_OUT = 10L
+    private const val CONNECT_TIME_OUT = 10L
 
     /**
      * retrofit集合
@@ -70,14 +70,12 @@ object STHttp {
     /**
      * 连接超时
      */
-    private val connectTimeOut = CONNECT_TIME_OUT
-
+    private const val connectTimeOut = CONNECT_TIME_OUT
     /**
      * 读写超时
      */
-    private val readTimeOut = CONNECT_TIME_OUT
-
-    private val writeTimeOut = CONNECT_TIME_OUT
+    private const val readTimeOut = CONNECT_TIME_OUT
+    private const val writeTimeOut = CONNECT_TIME_OUT
 
     private val gson: Gson = GsonBuilder()
             .setDateFormat("yyyy-MM-dd HH:mm:ss")

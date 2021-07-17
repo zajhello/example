@@ -13,6 +13,8 @@ import com.kingkong.common_library.request.SecretKeyRequest;
 import com.kingkong.common_library.router.RouterActivityPath;
 import com.kingkong.common_library.utils.EncryUtil;
 
+import io.reactivex.disposables.Disposable;
+
 public class LoginModel extends BaseViewModel {
 
 
@@ -25,7 +27,7 @@ public class LoginModel extends BaseViewModel {
     //登录按钮的点击事件
     public BindingCommand loginOnClickCommand = new BindingCommand(() -> {
 
-        PrecondRepository.getInstance()
+        Disposable mDisposable = PrecondRepository.getInstance()
                 .getSecretKetWithCache(new BaseRequest<SecretKeyRequest>(new SecretKeyRequest()))
                 .doOnSubscribe(disposable -> getUi().showLoadingDialog())
                 .doFinally(() -> getUi().hideLoadingDialog())
@@ -33,16 +35,20 @@ public class LoginModel extends BaseViewModel {
                 .subscribe(baseResponse -> {
                     String secret = baseResponse.getDatas().getSecret();
                     EncryUtil.syncDecryptKey(secret);
-//                    ToastUtils.showShort(secret);
-                    getUi().showToast(secret);
+                    ToastUtils.showShort(secret);
+//                    getUi().showToast(secret);
                     ARouter.getInstance().build(RouterActivityPath.Main.PAGER_MAIN).navigation();
                 }, throwable -> {
-//                    ToastUtils.showShort(throwable.getMessage());
-                    getUi().showToast(throwable.getMessage());
+                    ARouter.getInstance().build(RouterActivityPath.Main.PAGER_MAIN).navigation();
+                    ToastUtils.showShort(throwable.getMessage());
+                    getUi().finish();
+//                    getUi().showToast(throwable.getMessage());
                 });
 
+        // onDestroy() dispose()
+//        addDisposable(mDisposable);
         ToastUtils.showShort("防抖click写法");
-      //  ARouter.getInstance().build(RouterActivityPath.Main.PAGER_MAIN).navigation();
+        //  ARouter.getInstance().build(RouterActivityPath.Main.PAGER_MAIN).navigation();
         return null;
     });
 

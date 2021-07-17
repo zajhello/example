@@ -47,7 +47,7 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.main_activity_main);
         acquireWakeLock();
         initView();
-        initAdsDialog();
+//        initAdsDialog();
     }
 
 
